@@ -1,0 +1,193 @@
+.login_popup .container {
+  max-width: 60%;
+}
+.login_popup {
+  padding: 8% 0 0 0;
+  background-color: rgba(123, 123, 123, 0.9);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+}
+.bg_image img {
+  width: 100%;
+}
+.login_popup input {
+  background-color: #efefef;
+  margin: 10px 0;
+  outline: none;
+}
+
+.popup_bg {
+  background-color: #fff;
+  position: relative;
+}
+.login_popup .details {
+  padding: 40px 30px 40px 50px;
+}
+.login_popup input[type="submit"] {
+  background-color: #da5e25;
+  color: #fff;
+}
+.login_popup .details a {
+  text-align: center;
+  display: block;
+}
+.bg_image {
+  background-image: url(../images/popup-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pop_close {
+  position: absolute;
+  right: -40px;
+  color: #fff;
+  top: -20px;
+  z-index: 99;
+  font-size: 24px;
+}
+
+/***************/
+
+.page_space .container {
+  max-width: 60%;
+}
+
+.breadcrumb_bg {
+  background-image: url(../Assets/Group%20143.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 12% 0;
+}
+.breadcrumb {
+  background: #da5e27 !important;
+  color: #fff;
+  width: 25%;
+  border-radius: 0 !important;
+  border-left: 2px solid #ff611b;
+}
+.breadcrumb h3 {
+  font-size: 20px;
+}
+.profile_sec_form {
+  background-color: #ececec;
+  padding: 20px 30px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  margin: 30px 0;
+}
+.profile_sec_form h3 {
+  color: #da5e25;
+  font-size: 50px;
+}
+
+.profile_sec_form .details input {
+  background-color: #fff;
+  outline: none;
+}
+.profile_sec_form .details select {
+  background-color: #ffffff;
+  outline: none;
+  color: #5d5d5d;
+}
+.profile_sec_form th {
+  font-weight: 400;
+  background-color: #da5e25;
+  color: #fff;
+  padding: 10px;
+}
+.profile_sec_form td {
+  padding-left: 10px;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.profile_sec_form tr:nth-child(odd) {
+  background-color: #fff;
+}
+.profile_sec_form tr:nth-child(even) {
+  background-color: #e6e6e6;
+}
+
+@media only screen and (max-width: 1024px) {
+  .profile_sec_form th {
+    font-size: 12px;
+  }
+  .profile_sec_form td {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .popup_bg h3 {
+    font-size: 20px;
+  }
+  .popup_bg h3 {
+    font-size: 12px;
+  }
+  .login_popup .details {
+    padding: 20px 30px 20px 30px;
+  }
+  .login_popup input {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  .profile_sec_form h3 {
+    font-size: 39px;
+  }
+
+  .breadcrumb_bg {
+    padding: 20% 0;
+  }
+  .breadcrumb {
+    width: unset;
+    display: inline-block !important;
+    padding-right: 50px !important;
+  }
+  .login_popup .details a {
+    font-size: 12px;
+  }
+  .login_popup {
+    padding: 20% 0 0 0;
+  }
+  .profile_sec_form {
+    padding: 20px 10px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .pop_close {
+    right: 0;
+    top: -30px;
+  }
+  .popup_bg {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .popup_bg h3 {
+    font-size: 18px;
+  }
+  .page_space .container {
+    max-width: 100% !important;
+  }
+  .breadcrumb_bg {
+    padding-bottom: 20%;
+    padding-top: 30%;
+  }
+
+  .breadcrumb h3 {
+    font-size: 16px;
+  }
+  .profile_sec_form th {
+    font-size: 10px;
+  }
+  .profile_sec_form td {
+    font-size: 10px;
+  }
+  .profile_sec_form h3 {
+    font-size: 28px;
+  }
+}

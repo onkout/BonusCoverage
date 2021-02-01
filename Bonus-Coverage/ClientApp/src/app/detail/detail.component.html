@@ -1,0 +1,485 @@
+<style>
+  button.accordion {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 22px;
+    font-weight: 600;
+    transition: 0.4s;
+  }
+
+    button.accordion.active, button.accordion:hover {
+      background-color: #da5e25;
+    }
+
+    button.accordion:after {
+      content: '';
+      color: #777;
+      font-weight: bold;
+      float: right;
+      width: 33px;
+      height: 33px;
+      background-repeat: no-repeat;
+      margin-left: 5px;
+      background-image: url('../../assets/images/Icon feather-edit.png');
+    }
+
+    button.accordion.active:after {
+      content: "";
+    }
+
+  div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  table.table.table-striped thead {
+    background-color: #da5e25 !important;
+    color: #fff;
+  }
+
+  .check_box {
+    min-height: 75px;
+  }
+
+  .tab {
+    overflow: hidden;
+    margin-top: 15px;
+  }
+
+  .tablinks {
+    background-color: #f1f1f1 !important;
+    color: #000;
+    font-weight: 800;
+  }
+
+    .tablinks.active {
+      background-color: #da5e25 !important;
+      color: #fff;
+      font-weight: 800;
+    }
+
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 17px 37px;
+    transition: 0.3s;
+    font-size: 18px;
+    margin-right: 12px;
+  }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #ccc;
+    }
+
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+  }
+
+  .d-flex {
+    align-items: center;
+  }
+
+  .l_check {
+    display: flex;
+    margin-left: 20px;
+  }
+
+  input.inpu_c[type="checkbox"] {
+    visibility: hidden;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  input.inpu_c[type="checkbox"] + label:before {
+    border: 1px solid #333;
+    content: "\00a0";
+    display: inline-block;
+    font: 18px;
+    height: 25px;
+    margin: 0 .25em 0 0;
+    padding: 0;
+    vertical-align: top;
+    width: 25px;
+  }
+
+  input.inpu_c[type="checkbox"]:checked + label:before {
+    background: #da5e25;
+    color: #000;
+    content: "\2713";
+    text-align: center;
+  }
+
+  input.inpu_c[type="checkbox"]:checked + label:after {
+    font-weight: bold;
+  }
+
+  input.inpu_c[type="checkbox"]:focus + label::before {
+    outline: rgb(59, 153, 252) auto 5px;
+  }
+</style>
+<main class="check_eligibility">
+  <section>
+    <div class="container">
+      <button class="accordion" (click)="SelectTab($event,'vehicle')">CHOOSE VEHICLE</button>
+      <div class="panel active" style="max-height:325px;">
+        <div class="step_2 step_background first_tab">
+          <h2 class="text-uppercase text-heading">Choose Vehicle</h2>
+          <form class="drop_down_form">
+            <div class="row">
+              <div class="col-sm-6 mb-3 details ">
+                <span class="position-relative">
+                  <select class="required" name="state" required>
+                    <option value="">Select State</option>
+                    <option value="1" selected="selected">Texas</option>
+                    <option value="2">California</option>
+                  </select>
+                </span>
+              </div><!--col-6-->
+              <div class="col-sm-6 mb-3 details ">
+                <span class="position-relative">
+                  <select class="required" name="make" required="">
+                    <option value="">Select Make</option>
+                    <option value="2">Ford</option>
+                    <option value="3">Chevorlet</option>
+                    <option value="4">Nissan</option>
+                    <option value="5">Hyundai</option>
+                    <option value="7" selected="selected">Dodge</option>
+                  </select>
+                </span>
+              </div><!--col-6-->
+              <div class="col-sm-6 mb-3 details ">
+                <span class="position-relative">
+                  <select class="required" name="year" required="">
+                    <option value="">Select Year</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021" selected="selected">2021</option>
+                    <option value="2022">2022</option>
+                  </select>
+                </span>
+              </div><!--col-6-->
+              <div class="col-sm-6 mb-3">
+                <input type="text" class="required" id="date" value="" name="oddometer" placeholder="Enter Odometer">
+              </div><!--col-6-->
+            </div><!--row-->
+            <div class="form_button"> <button (click)="MoveNext($event)" type="button" class="next">Next</button></div>
+          </form>
+        </div>
+      </div>
+      <button class="accordion" (click)="SelectTab($event,'account')">CREATE ACCOUNT</button>
+      <div class="panel">
+        <div class="show_div33">
+          <div class="step_33 step_background first_tab">
+            <h2 class="text-uppercase text-heading">Create Acccount</h2>
+            <div class="details">
+              <form>
+                <div class="row">
+                  <div class="col-md-4 py-3"> <input class="required" type="text" placeholder="Email" required="required" /></div>
+                  <div class="col-md-4 py-3 step_2">
+                    <input class="required" type="password" placeholder="Create Password" required="required" />
+                  </div>
+                  <div class="col-md-6 py-3"> <input class="required" type="text" placeholder="First Name" value="Shachar" required="required" /></div>
+                  <div class="col-md-6 py-3"> <input class="required" type="text" placeholder="Last Name" value="Hodes" required="required" /> </div>
+                  <div class="col-md-6 py-3"> <input class="required" type="text" placeholder="Address" value="3919 Waverly Bend " required="required" /> </div>
+                  <div class="col-md-6 py-3"> <input class="required" type="text" placeholder="Apartment, suite, unit, floor, etc." required="required" /></div>
+                  <div class="col-md-4 py-3"> <input class="required" type="text" placeholder="City" value="Katy" required="required" /> </div>
+                  <div class="col-md-4 py-3 step_2">
+                    <span class="position-relative">
+                      <select class="required" name="state" required>
+                        <option value="">Select State</option>
+                        <option value="1" selected="selected">Texas</option>
+                        <option value="2">California</option>
+                      </select>
+                    </span>
+                  </div>
+                  <div class="col-md-4 py-3"> <input class="required" type="text" placeholder="Zip Code" value="77450" required="required" /> </div>
+                  <div class="col-md-4 py-3"> <input class="required" type="text" placeholder="VIN " value="2C4RDGCG1JR267054" required="required" /> </div>
+                  <div class="col-md-4 py-3"> <input class="required" type="text" placeholder="Mobile Phone" value="832-705-4657" required="required" /> </div>
+                  <div class="col-md-4 py-3"> <input class="required" type="text" placeholder="Other Phone" value="832-705-4656" /> </div>
+                </div><!--row-->
+                <div class="form_button"> <button (click)="MoveNext($event)" class="next" type="button">Next</button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="accordion" (click)="SelectTab($event,'plan')">CHOOSE PLAN</button>
+      <div class="panel">
+        <div class="step_two">
+          <div class="step_1 step_background">
+            <h2 class="text-uppercase text-heading">Choose Plan</h2>
+            <div class="question">
+              <div class="row align-itmes-center">
+                <div class="col-lg-2">
+                  <span class="popup" data-toggle="modal" data-target="#coverage">Coverage + </span>
+                </div><!--col-9-->
+                <div class="col-lg-10 text-right button_left">
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-primary active">
+                      <input class="required" type="radio" name="coverage" value="best" autocomplete="off" checked="checked"> Best
+                    </label>
+                  </div>
+                </div><!--col-9-->
+                <div class="col-lg-2">
+                  <span>Terms</span>
+                </div><!--col-9-->
+                <div class="col-lg-10 text-right button_left">
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-primary active">
+                      <input class="required" type="radio" name="terms" autocomplete="off" checked="checked"> 4 Year 100K Miles
+                    </label>
+                    <label class="btn btn-primary">
+                      <input class="required" type="radio" name="terms" autocomplete="off"> 5 Year 100K Miles
+                    </label>
+                    <label class="btn btn-primary ">
+                      <input class="required" type="radio" name="terms" autocomplete="off"> 6 Year 100K Miles
+                    </label>
+                  </div>
+                </div><!--col-9-->
+                <div class="col-lg-2">
+                  <span>Deductiable</span>
+                </div><!--col-9-->
+                <div class="col-lg-10 text-right button_left">
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-primary active">
+                      <input class="required" type="radio" name="deductiable" autocomplete="off" checked="checked">$0
+                    </label>
+                    <label class="btn btn-primary">
+                      <input class="required" type="radio" name="deductiable" autocomplete="off"> $100
+                    </label>
+                    -->
+                  </div>
+                </div><!--col-9-->
+              </div><!--row-->
+            </div>
+            <div class="row inner-step-2">
+              <div class="col-lg-4">
+                <h5>AVG Warranty Cost</h5>
+                <p class="p-h">Est. Totat</p>
+                <p class="p-price">$2,310.00</p>
+
+                <p class="p-h">Est. Monthly</p>
+                <p class="p-price">$81,20/36 Monthly</p>
+              </div>
+
+              <div class="col-lg-4">
+                <h5>Half Price Warranty</h5>
+                <p class="p-h">Est. Totat</p>
+                <p class="p-price">50%</p>
+
+                <p class="p-h">Est. Monthly</p>
+                <p class="p-price">50%</p>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="tot_btn">Final Cost</div>
+                <p class="p-h">Est. Totat</p>
+                <p class="p-price">$1,155.00</p>
+
+                <p class="p-h">Est. Monthly</p>
+                <p class="p-price">$40.60/36 Monthly</p>
+              </div>
+            </div>
+            <div class="form_button"> <button (click)="MoveNext($event)" class="next" type="button">Next</button></div>
+          </div>
+        </div>
+      </div>
+      <button class="accordion" (click)="SelectTab($event,'question')">QUALIFYING QUESTIONS</button>
+      <div class="panel">
+        <div class="step_3 step_background">
+          <h2 class="text-uppercase text-heading">Please Approve The Following</h2>
+          <div class="col-12  py-3 checkout_form " style="float:left">
+            <label class="check_box m-0">
+              <input type="checkbox" name="PreviousDefects" value="" required="required" class="check_btn required-check">
+              My vehicle is free of previous defects.
+            </label>
+          </div>
+          <div class="col-12  py-3 checkout_form " style="float:left">
+            <label class="check_box m-0">
+              <input type="checkbox" name="Terms1" value="" required="required" class="check_btn required-check">
+              I understand that if I stop making payments on my contract, all coverage becomes void and may result in cancellation of this contract; no refund will be due and no claims will be authorized.
+            </label>
+          </div>
+          <div class="col-12  py-3 checkout_form " style="float:left">
+            <label class="check_box m-0">
+              <input type="checkbox" name="Terms2" value="" required="required" class="check_btn required-check">
+              I understand that if my odometer entry is not valid, my contract becomes void (will be validated at time of service). <br />
+            </label>
+          </div>
+          <div class="">
+            <div class="form_button"> <button (click)="MoveNext($event)" class="next" type="button">Next</button></div>
+          </div>
+        </div>
+      </div>
+      <button class="accordion" (click)="SelectTab($event,'payment')">CHOOSE PAYMENT</button>
+      <div class="panel">
+        <div class="tab">
+          <button class="tablinks active" onclick="openCity(event, 'London')" id="defaultOpen">Credit Card</button>
+          <button class="tablinks" onclick="openCity(event, 'Paris')">Financing</button>
+        </div>
+        <div id="London" class="tabcontent" style="display: block;">
+          <div class="step_3 step_background">
+            <h2 class="text-uppercase text-heading">Enter your details Credit Card</h2>
+            <div class="details">
+                <div class="row">
+                  <div class="col-md-6 py-3"> <input type="text" placeholder="Name of Card" class="required" required="required"></div>
+                  <div class="col-md-6 py-3"> <input type="text" placeholder="Card#" class="required" required="required"> </div>
+                  <div class="col-md-6 py-3"> <input type="text" placeholder="Exp.Date" class="required" required="required"> </div>
+                  <div class="col-md-6 py-3"> <input type="text" placeholder="CVC" class="required" required="required"></div>
+                </div>
+                <div class="d-flex">
+                  <div class="h2_f">
+                    <h2 class="text-uppercase text-heading">Address</h2>
+                  </div>
+                  <div class="l_check">
+                    <input type="checkbox" class="inpu_c required" id="vehicle1" name="vehicle1" value="Bike" style="width:10px;">
+                    <label for="vehicle1">Check if address is same as above.</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 py-3"> <input type="text" placeholder="First Name" class="required" required="required"></div>
+                  <div class="col-md-6 py-3"> <input type="text" placeholder="Last Name" class="required" required="required"> </div>
+                  <div class="col-md-6 py-3"> <input type="text" placeholder="Address" class="required" required="required"> </div>
+                  <div class="col-md-6 py-3"> <input type="text" placeholder="Apartment, suite, unit, floor, etc." class="required" required="required"></div>
+                  <div class="col-md-4 py-3"> <input type="text" placeholder="City" class="required" required="required"> </div>
+                  <div class="col-md-4 py-3 step_2">
+                    <span class="position-relative">
+                      <select required="required" class="required">
+                        <option value="">Select State</option>
+                        <option value="1">Texas</option>
+                        <option value="2">California</option>
+                      </select>
+                    </span>
+                  </div>
+                  <div class="col-md-4 py-3"> <input type="text" placeholder="Zip Code" class="required" required="required"> </div>
+                </div><!--row-->
+                <div class="form_button"> <button (click)="SubmitDetail($event)" class="next" type="button">Submit</button></div>
+            </div><!--details-->
+          </div>
+        </div>
+        <div id="Paris" class="tabcontent" style="display: none;">
+          <div class="step_3 step_background">
+            <h2 class="text-uppercase text-heading">Enter your details Financing</h2>
+            <div class="details">
+              <div class="row">
+                <div class="col-md-6 py-3"> <input type="text" placeholder="Name of Card" required="required" class="required"></div>
+                <div class="col-md-6 py-3"> <input type="text" placeholder="Card#" required="required" class="required"> </div>
+
+                <div class="col-md-6 py-3"> <input type="text" placeholder="Exp.Date" required="required" class="required"> </div>
+                <div class="col-md-6 py-3"> <input type="text" placeholder="CVC" required="required" class="required"></div>
+              </div>
+              <div class="d-flex">
+                <div class="h2_f">
+                  <h2 class="text-uppercase text-heading">Address</h2>
+                </div>
+                <div class="l_check">
+                  <input type="checkbox" class="inpu_c required" id="vehicle2" name="vehicle2" value="Bike">
+                  <label for="vehicle2">Check if address is same as above.</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 py-3"> <input type="text" placeholder="First Name" required="required" class="required"></div>
+                <div class="col-md-6 py-3"> <input type="text" placeholder="Last Name" required="required" class="required"> </div>
+
+                <div class="col-md-6 py-3"> <input type="text" placeholder="Address" required="required" class="required"> </div>
+                <div class="col-md-6 py-3"> <input type="text" placeholder="Apartment, suite, unit, floor, etc." required="required" class="required"></div>
+
+                <div class="col-md-4 py-3"> <input type="text" placeholder="City" required="required" class="required"> </div>
+                <div class="col-md-4 py-3 step_2">
+                  <span class="position-relative">
+                    <select required="required" class="required">
+                      <option value="">Select State</option>
+                      <option value="1">Texas</option>
+                      <option value="2">California</option>
+                    </select>
+                  </span>
+                </div>
+                <div class="col-md-4 py-3"> <input type="text" placeholder="Zip Code" required="required" class="required"> </div>
+              </div><!--row-->
+              <div class="form_button"> <button (click)="SubmitDetail($event)" class="next" type="button">Submit</button></div>
+            </div><!--details-->
+          </div>
+        </div>
+      </div>
+    </div><!--container-->
+  </section>
+</main>
+<div class="modal fade" id="coverage" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="modal-body">
+        <div class="table-responsive-md">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Coverage</th>
+                <th scope="col">
+                  <div class="checkbox">
+                    <input class="required" id="coverage4" type="radio" name="coverage2" checked>
+                    <label for="coverage4"><span class="check"></span> Good</label>
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="checkbox">
+                    <input class="required" id="coverage5" type="radio" name="coverage2" checked>
+                    <label for="coverage5"><span class="check"></span> Great</label>
+                  </div>
+                </th>
+                <th scope="col">
+                  <div class="checkbox">
+                    <input class="required" id="coverage6" type="radio" name="coverage2" checked>
+                    <label for="coverage6"><span class="check"></span> Best</label>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Name</td>
+                <td>Good<i class="fas fa-check"></i></td>
+                <td>Better<i class="fas fa-check"></i></td>
+                <td>Best<i class="fas fa-check"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

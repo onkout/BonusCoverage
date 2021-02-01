@@ -1,0 +1,377 @@
+<main>
+  <section class="sec_1">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 col-sm-12">
+          <div class="heading"><h1 class="text-upparcase">Same coverage <br /> for half the <br /> price </h1> </div>
+          <form (ngSubmit)="onSubmit($event)" #quoteForm="ngForm">
+            <div id="quote-form" class="row">
+              <div class="col-sm-3 pr-0">
+                <div class="login_detail details_search">
+                  <span class="position-relative">
+                    <select name="state" [(ngModel)]="model.state" #name="ngModel" id="state" class="required">
+                      <option value="">Select State</option>
+                      <option value="1">Texas</option>
+                      <option value="2">California</option>
+                    </select>
+                  </span>
+                </div><!--login_detail-->
+              </div><!--col-lg-4-->
+              <div class="col-sm-3 pr-0">
+                <div class="login_detail details_search">
+                  <span class="position-relative">
+                    <select name="make" [(ngModel)]="model.make" #name="ngModel" id="make" class="required">
+                      <option value="">Select Make</option>
+                      <option value="2">Ford</option>
+                      <option value="3">Chevorlet</option>
+                      <option value="4">Nissan</option>
+                      <option value="5">Hyundai</option>
+                      <option value="7">Dodge</option>
+                    </select>
+                  </span>
+                </div><!--login_detail-->
+              </div><!--col-lg-4-->
+              <div class="col-sm-3 pr-0">
+                <div class="login_detail details_search">
+                  <span class="position-relative">
+                    <select name="year" [(ngModel)]="model.year" #name="ngModel" id="year" class="required">
+                      <option value="">Select Year</option>
+                      <option value="2009">2009</option>
+                      <option value="2010">2010</option>
+                      <option value="2011">2011</option>
+                      <option value="2012">2012</option>
+                      <option value="2013">2013</option>
+                      <option value="2014">2014</option>
+                      <option value="2015">2015</option>
+                      <option value="2016">2016</option>
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
+                      <option value="2019">2019</option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                    </select>
+                  </span>
+                </div><!--login_detail-->
+              </div><!--col-lg-4-->
+              <div class="col-sm-3">                
+                <div class="oddometer">
+                  <input type="text" name="odometer" required placeholder="enter odometer" class="required" />
+                </div>
+              </div><!--col-lg-4-->
+            </div>  <!--row-->
+            <div class="submit-next">
+              <input type="submit" name="submit" [disabled]="!quoteForm.form.valid" value="GET A QUOTE" />
+            </div>
+          </form>
+          <!--<p class="text-capitalize mt-4"><a href="#"> Already Applied? </a>check the status of your contract </p>-->
+        </div><!--col-6-->
+      </div><!--row-->
+    </div><!--container-->
+  </section><!--sec_1-->
+
+
+  <section class="sec_2 space">
+    <div class="shadow">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="box ">
+              <h5 class="text-uppercase">what is Bonus Coverage? </h5>
+              <p>We are a leading vehicle service contract program. Join thousands of customers who save money and get great coverage on their vehicle. </p>
+              <a href="#" data-toggle="modal" data-target="#exampleModal"> Watch Video<img src="../../assets/images/Icon awesome-chevron-right.png" /> </a>
+            </div>
+          </div><!--col-4-->
+          <div class="col-lg-4">
+            <div class="box ">
+              <h5 class="text-uppercase">how does it work?</h5>
+              <p> By cutting the middle man, we can save you the customer all the unnecessary fees that you would pay at a regular dealership or over the phone. </p>
+              <a href="#" data-toggle="modal" data-target="#exampleModal"> Watch Video <img src="../../assets/images/Icon awesome-chevron-right.png" /></a>
+            </div>
+          </div><!--col-4-->
+          <div class="col-lg-4">
+            <div class="box ">
+              <h5 class="text-uppercase">what's the catch? </h5>
+              <p> You will have to cancel your current warrnty. Everything else is on us. </p>
+              <a href="#"> See The Reviews<img src="../../assets/images/Icon awesome-chevron-right.png" /></a>
+            </div>
+          </div><!--col-4-->
+        </div><!--row-->
+      </div><!--container-->
+    </div>
+  </section><!--sec_2-->
+
+  <section class="sec_3 space">
+    <div class="container">
+      <h5 class="text-uppercase"> why Bonus Coverage?</h5>
+      <h2 class="text-uppercase">you get more for your money </h2>
+      <div class="row">
+        <div class="col-md-4  get_money" style="text-align: center">
+          <img class="img_three" src="../../assets/images/piggy-bank.png" />
+          <p> Get up to $1,500 cash back when <br /> you switch - You're welocme! </p>
+        </div><!--col-4-->
+        <div class="col-md-4  get_money" style="text-align: center">
+          <img class="img_three" src="../../assets/images/save-money.png" />
+          <p> National provider. We work with ASE certified technicians in your area.</p>
+        </div><!--col-4-->
+        <div class="col-md-4  get_money" style="text-align: center">
+          <img class="img_three" src="../../assets/images/home.png" />
+          <p> Peace of mind <br />for you and your entire family.</p>
+        </div><!--col-4-->
+      </div><!--row-->
+      <div class="sec_3_cashback1"><h2 class="text-uppercase">up to <br /> $1,500 <br /> cash back </h2> </div>
+
+    </div><!--container-->
+  </section><!--sec_3-->
+
+  <section class="sec_4 space">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6  get_money">
+          <h4 class="text-uppercase text-black fbold"> why Bonus Coverage?</h4>
+          <h2 class="text-uppercase">save money <br /> and enjoy <br /> great service</h2>
+          <p> Don't just take it form us. Here's what our happy <br />customers have to say about the Bonus coverage <br /> program! </p>
+        </div><!--col-7-->
+        <div class="col-md-6  get_money">
+          <div class="video_slide position-relative">
+            <div class="hs2-wrapper">
+              <div class="hs2-wrapper-slider">
+                <div class="slider banner">
+                  <div>
+                    <video width="500" height="307" controls autoplay>
+                      <source src="../../assets/download/Bonus Coverage Introduction.mp4" type="video/mp4">
+                    </video>                    
+                    <!--<iframe width="500px" height="307px" src="https://www.youtube.com/embed/VDtd4LSuGhs?autoplay=1" frameborder="0" allowfullscreen></iframe>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!--col-4-->
+      </div><!--row-->
+      <div class="testimonial">
+        <div class="hs2-wrapper">
+          <div class="hs2-wrapper-slider">
+            <div class="slider gift_slider">
+              <!-- slide-1 -->
+              <div>
+                <div class="slide-wrapper  position-relative">
+                  <div class="testimonial_sliders text-left position-relative">
+                    <h6> Kyle P.</h6>
+                    <img src="../../assets/images/Group 22.png" />
+                    <p class="quote_border"> <i class="fas fa-quote-left"></i> <span> </span></p>
+                    <p>No hassle and a great price. Highly recommend! </p>
+                    <span>20 Dec 2020 </span>
+                  </div><!--testimonial_sliders-->
+                </div><!--slide-wrapper-->
+              </div>
+              <!-- slide-2 -->
+              <div>
+                <div class="slide-wrapper  position-relative">
+                  <div class="testimonial_sliders text-left position-relative">
+                    <h6> Shachar H.</h6>
+                    <img src="../../assets/images/Group 22.png" />
+                    <p class="quote_border"> <i class="fas fa-quote-left"></i> <span> </span></p>
+                    <p>Bonus Coverage makes it easy to purchase. I also got 0% financing. </p>
+                    <span>13 Sep 2020 </span>
+
+                  </div><!--testimonial_sliders-->
+
+                </div><!--slide-wrapper-->
+
+              </div>
+              <!-- slide-3 -->
+              <div>
+                <div class="slide-wrapper  position-relative">
+                  <div class="testimonial_sliders text-left position-relative">
+                    <h6> Lauren O.</h6>
+                    <img src="../../assets/images/Group 22.png" />
+                    <p class="quote_border"> <i class="fas fa-quote-left"></i> <span> </span></p>
+                    <p>Piece of mind for the right price. I only wish Bonus Coverage was available on my previous cars. </p>
+                    <span>27 May 2020 </span>
+
+                  </div><!--testimonial_sliders-->
+
+                </div><!--slide-wrapper-->
+              </div>
+            </div>
+          </div>
+        </div><!--hs2-wrraper-->
+      </div> <!--testimonial-->
+
+    </div><!--container-->
+  </section><!--sec_4-->
+
+  <section class="sec_5 space">
+    <div class="container">
+      <h5 class="text-uppercase text-heading text-white"> why Bonus Coverage?</h5>
+      <h2 class="text-uppercase text-orange">it's easy?</h2>
+      <p> Join thousands of customers who've received cash back form bonus coverage by following three simple steps!</p>
+
+      <div class="easy">
+        <div class="row">
+          <div class="col-lg-4 get_money">
+            <img src="../../assets/images/Group 48.png" />
+            <h6>Choose your coverage plan </h6>
+            <p> Choose the coverage plan that fits your needs the most. </p>
+            <a href="#"> Check Eligibility  <img src="../../assets/images/Icon awesome-chevron-right.png"> </a>
+          </div><!--col-4-->
+          <div class="col-lg-4 get_money">
+            <img src="../../assets/images/Group 47.png" />
+            <h6>Enter your information </h6>
+            <p> We would like to know you so we can better serve you. </p>
+            <a href="#"> Enter your information  <img src="../../assets/images/Icon awesome-chevron-right.png"> </a>
+          </div><!--col-4-->
+          <div class="col-lg-4 get_money">
+            <img src="../../assets/images/Group 46.png" />
+            <h6>Let us work</h6>
+            <p> Sit back and relax. We will get you the best deal in no time. </p>
+            <a href="#"> Apply Now<img src="../../assets/images/Icon awesome-chevron-right.png"> </a>
+          </div><!--col-4-->
+        </div>	<!--row-->
+
+        <p class="cash_back_offers"> Cash savings can vary. Depending on make and model we look forward to finding you the best deal.</p>
+      </div><!--easy-->
+
+    </div><!--container-->
+  </section> <!--sec_5-->
+
+  <section class="sec_6 space">
+    <div class="container">
+      <div class="sec_3_cashback"><h2 class="text-uppercase">Your <br /> perfect <br /> match</h2></div>
+      <p style="color:black">All contracts are additive time and additive mileage. Have 5,000 miles on your vehicle? A 5 year, 100,000 miles policy will cover you from the purchase date for five years, or 105,000 miles, whichever occers first.</p>
+
+    </div><!--container-->
+  </section> <!--sec_6-->
+
+  <section class="sec_7 space">
+    <div class="container">
+      <h5 class="text-uppercase text-black"> why bonus coverage?</h5>
+      <h2 class="text-uppercase text-heading">RIGHT COVERAGE FOR THE RIGHT PRICE</h2>
+
+      <div class="brand_shop testimonial">
+        <div class="hs2-wrapper">
+          <div class="hs2-wrapper-slider">
+            <div class="slider gift_slider">
+              <!-- slide-1 -->
+              <div>
+                <div class="slide-wrapper  position-relative">
+                  <div class="testimonial_sliders text-left position-relative">
+                    <div class="text-center"> <img src="../../assets/images/Toyota Rav4.png "> </div>
+                    <h6> Honda / Toyota / Nissan</h6>
+                    <h4 style="color:red">as low as $766</h4>
+                    <p>5 years 100K miles</p>
+                    <a href="#"> Buy Now</a>
+
+                  </div><!--testimonial_sliders-->
+                </div><!--slide-wrapper-->
+
+              </div>
+              <!-- slide-2 -->
+              <div>
+                <div class="slide-wrapper  position-relative">
+                  <div class="testimonial_sliders text-left position-relative">
+                    <div class="text-center"> <img src="../../assets/images/fiat.png"> </div>
+                    <h6> Hyundai / Fiat / Kia</h6>
+                    <h4 style="color:red">as low as $827</h4>
+                    <p>5 years 100K miles</p>
+                    <a href="#"> Buy Now</a>
+
+                  </div><!--testimonial_sliders-->
+
+                </div><!--slide-wrapper-->
+
+              </div>
+              <!-- slide-3 -->
+              <div>
+                <div class="slide-wrapper  position-relative">
+                  <div class="testimonial_sliders text-left position-relative">
+                    <div class="text-center"> <img src="../../assets/images/Ford 150.png "> </div>
+                    <h6> CDJR / FORD / GM</h6>
+                    <h4 style="color:red">as low as $991</h4>
+                    <p>5 years 100K miles</p>
+                    <a href="#"> Buy Now</a>
+
+                  </div><!--testimonial_sliders-->
+
+                </div><!--slide-wrapper-->
+              </div>
+              <!-- slide-4 -->
+              <div>
+                <div class="slide-wrapper  position-relative">
+                  <div class="testimonial_sliders text-left position-relative">
+                    <div class="text-center"> <img src="../../assets/images/BMW.png "> </div>
+                    <h6> Audi / BMW / Jaguar</h6>
+                    <h4 style="color:red">as low as $2,659</h4>
+                    <p>5 years 100K miles</p>
+                    <a href="#"> Buy Now</a>
+
+                  </div><!--testimonial_sliders-->
+
+                </div><!--slide-wrapper-->
+              </div>
+
+
+            </div>
+          </div>
+        </div><!--hs2-wrraper-->
+      </div><!--brand_shop-->
+    </div><!--container-->
+  </section> <!--sec_7-->
+
+
+  <section class="sec_8 space">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-6">
+          <h2 class="text-uppercase text-heading">Connect with us</h2>
+          <p> Join thousands of customers who've received cash back form bonus coverage by following three simple steps!</p>
+          <div class="social_button">
+            <a href="#" class="btn">Facebook </a>
+            <a href="#" class="btn">Instagram </a>
+          </div>
+        </div><!--col-7-->
+        <div class="col-md-6 gallery_space">
+          <div class="row">
+            <div class="col-4 py-3"><img src="../../assets/images/Mask Group 9.png" /> </div>
+            <div class="col-4 py-3"><img src="../../assets/images/Mask Group 10.png" />  </div>
+            <div class="col-4 py-3"><img src="../../assets/images/Mask Group 11.png" />  </div>
+            <div class="col-4 py-3"><img src="../../assets/images/Mask Group 12.png" />  </div>
+            <div class="col-4 py-3"><img src="../../assets/images/Mask Group 13.png" />  </div>
+            <div class="col-4 py-3"><img src="../../assets/images/Mask Group 14.png" /> </div>
+
+          </div>
+
+        </div><!--col-5-->
+
+      </div><!--row-->
+    </div><!--container-->
+  </section> <!--sec_8-->
+
+
+</main>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content width50">
+      <div class="modal-header_m">
+        <button type="button" class="close pop_up top" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="fas fa-times"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe width="769px" class="vidio_n" height="500px" src="https://www.youtube.com/embed/VDtd4LSuGhs" frameborder="0" allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <!--   <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+    </div>
+  </div>
+</div>
+
+

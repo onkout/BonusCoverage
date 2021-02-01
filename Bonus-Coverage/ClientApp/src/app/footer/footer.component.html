@@ -1,0 +1,87 @@
+<footer class="space footer">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="logo_footer"> <img src="../../assets/images/Layer_x0020_1.png" /> </div>
+      </div><!--col-4-->
+      <div class="col-lg-2">
+        <ul class="footer_menu">
+          <li><a href="#" class="text-capitalize"> check eligibility</a> </li>
+          <li><a href="#" class="text-capitalize"> Get My check</a> </li>
+          <li><a href="#" class="text-capitalize"> shop our brand </a> </li>
+        </ul>
+      </div><!--col-2-->
+      <div class="col-lg-2">
+        <ul class="footer_menu">
+          <li><a href="#" class="text-capitalize">contact us</a> </li>
+          <li><a href="#" class="text-capitalize"> faq</a> </li>
+        </ul>
+      </div><!--col-2-->
+      <div class="col-lg-2">
+        <ul class="footer_menu">
+          <li><a href="#" class="text-capitalize"> visit our blog </a> </li>
+          <li><a href="#" class="text-capitalize">about us</a> </li>
+        </ul>
+      </div><!--col-2-->
+      <div class="col-lg-2">
+        <ul class="footer_menu">
+          <li><a href="#" class="text-capitalize"> facebook</a> </li>
+          <li><a href="#" class="text-capitalize"> instagram</a> </li>
+        </ul>
+      </div><!--col-2-->
+    </div><!--row-->
+
+    <div class="copy_right">
+      <ul>
+        <li><a href="#" class="text-capitalize"> 2020 Bonuscoverage</a> </li>
+        <li><a href="#" class="text-capitalize"> Privacy Policy</a> </li>
+        <li><a href="#" class="text-capitalize"> Terms And services</a> </li>
+        <li><a href="#" class="text-capitalize"> Applicatio Status</a> </li>
+        <li><a href="#" class="text-capitalize border_none"> Request The Review Of My Personal Information</a> </li>
+      </ul>
+    </div>
+
+  </div><!--container-->
+</footer>
+<!--Nav Menu-->
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+
+</script>
+
+<script>
+  var site_url = '/';
+  $(document).ready(function () {
+
+
+    $('#login').submit(function (e) {
+      event.preventDefault();
+      var _that = $(this);
+      var _form = _that.closest('form');
+      $.post(site_url + 'api', _form.serialize()).done(function (response) {
+        var response = JSON.parse(response);
+        if (response.status == 1) {
+          $('.success-alert').html('*' + response.message).css('display', 'block');
+          $('.warning-alert').html('').css('display', 'none');
+          window.location.href = site_url + 'profile';
+        }
+        else {
+          $('.success-alert').html('').css('display', 'none');
+          $('.warning-alert').html('*' + response.message).css('display', 'block');
+        }
+      });
+    });
+    $("body").on('click', '.close', function (e) {
+      $("#exampleModal iframe").attr("src", $("#exampleModal iframe").attr("src"));
+    });
+  });
+
+
+</script>

@@ -1,0 +1,140 @@
+button.accordion {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 22px;
+  font-weight: 600;
+  transition: 0.4s;
+}
+
+  button.accordion.active, button.accordion:hover {
+    background-color: #da5e25;
+  }
+
+  button.accordion:after {
+    content: '';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    width: 33px;
+    height: 33px;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    background-image: url('../../assets/images/Icon feather-edit.png');
+  }
+
+  button.accordion.active:after {
+    content: "";
+  }
+
+div.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+table.table.table-striped thead {
+  background-color: #da5e25 !important;
+  color: #fff;
+}
+
+.check_box {
+  min-height: 75px;
+}
+
+.tab {
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.tablinks {
+  background-color: #f1f1f1 !important;
+  color: #000;
+  font-weight: 800;
+}
+
+  .tablinks.active {
+    background-color: #da5e25 !important;
+    color: #fff;
+    font-weight: 800;
+  }
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 17px 37px;
+  transition: 0.3s;
+  font-size: 18px;
+  margin-right: 12px;
+}
+
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+}
+
+.d-flex {
+  align-items: center;
+}
+
+.l_check {
+  display: flex;
+  margin-left: 20px;
+}
+
+input.inpu_c[type="checkbox"] {
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+}
+
+input.inpu_c[type="checkbox"] + label:before {
+  border: 1px solid #333;
+  content: "\00a0";
+  display: inline-block;
+  font: 18px;
+  height: 25px;
+  margin: 0 .25em 0 0;
+  padding: 0;
+  vertical-align: top;
+  width: 25px;
+}
+
+input.inpu_c[type="checkbox"]:checked + label:before {
+  background: #da5e25;
+  color: #000;
+  content: "\2713";
+  text-align: center;
+}
+
+input.inpu_c[type="checkbox"]:checked + label:after {
+  font-weight: bold;
+}
+
+input.inpu_c[type="checkbox"]:focus + label::before {
+  outline: rgb(59, 153, 252) auto 5px;
+}
